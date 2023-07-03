@@ -1,7 +1,10 @@
 import 'package:car_store_app/product/constants/app_colors.dart';
 import 'package:car_store_app/product/constants/app_strings.dart';
 import 'package:car_store_app/product/extension/context_extension.dart';
+import 'package:car_store_app/product/widgets/click_rich_text.dart';
+import 'package:car_store_app/product/widgets/custom_button.dart';
 import 'package:car_store_app/product/widgets/custom_textfield.dart';
+import 'package:car_store_app/product/widgets/text_divider.dart';
 import 'package:flutter/material.dart';
 
 class SignupView extends StatelessWidget {
@@ -26,11 +29,9 @@ class SignupView extends StatelessWidget {
                 child: TextfieldArea(),
               ),
               Expanded(
-                flex: 1,
                 child: ButtonAndDivider(),
               ),
               Expanded(
-                flex: 1,
                 child: SocialMediaAndSignin(),
               )
             ],
@@ -76,23 +77,12 @@ class SocialMediaAndSignin extends StatelessWidget {
         SizedBox(
           height: context.dynamicHeight(0.01),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(AppStrings.alreadyHaveAccount),
-            SizedBox(width: context.dynamicHeight(0.01)),
-            InkWell(
-              onTap: () {},
-              child: Text(
-                AppStrings.signIn,
-                style: context.textTheme.bodyLarge?.copyWith(
-                  color: AppColors.orange,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ],
-        ),
+        ClickableTextRow(
+          onTap: () {},
+          text: AppStrings.alreadyHaveAccount,
+          clickableText: AppStrings.signIn,
+          textClr: AppColors.orange,
+        )
       ],
     );
   }
@@ -110,38 +100,13 @@ class ButtonAndDivider extends StatelessWidget {
         SizedBox(
           height: context.dynamicHeight(0.01),
         ),
-        Container(
-          height: context.dynamicHeight(0.08),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: AppColors.orange,
-          ),
-          child: Center(
-            child: Text(
-              AppStrings.signUp,
-              style: context.textTheme.bodyLarge?.copyWith(
-                color: AppColors.background,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
+        CustomButton(
+          btnColor: AppColors.orange,
+          text: AppStrings.signUp,
+          dynamicHeight: 0.08,
+          onTap: () {},
         ),
-        Row(
-          children: [
-            const Expanded(
-                child: Divider(
-              thickness: 2,
-            )),
-            Text(
-              AppStrings.or,
-              style: context.textTheme.bodySmall,
-            ),
-            const Expanded(
-                child: Divider(
-              thickness: 2,
-            )),
-          ],
-        ),
+        DividerWithText(text: AppStrings.or, dividerThickness: 2),
         Text(
           AppStrings.signUpWith,
           style: context.textTheme.bodyMedium?.copyWith(
@@ -163,10 +128,16 @@ class TextfieldArea extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        CustomTextField(hintText: AppStrings.fullName, icon: Icons.person_outline),
+        CustomTextField(
+          hintText: AppStrings.fullName,
+          icon: Icons.person_outline,
+        ),
         CustomTextField(hintText: AppStrings.email, icon: Icons.mail_outline),
         CustomTextField(hintText: AppStrings.phone, icon: Icons.phone_outlined),
-        CustomTextField(hintText: AppStrings.password, icon: Icons.lock_outline),
+        CustomTextField(
+          hintText: AppStrings.password,
+          icon: Icons.lock_outline,
+        ),
       ],
     );
   }
