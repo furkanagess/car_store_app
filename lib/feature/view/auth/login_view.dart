@@ -1,5 +1,9 @@
 import 'package:car_store_app/product/constants/app_colors.dart';
+import 'package:car_store_app/product/constants/app_strings.dart';
 import 'package:car_store_app/product/extension/context_extension.dart';
+import 'package:car_store_app/product/widgets/click_rich_text.dart';
+import 'package:car_store_app/product/widgets/clickable_text.dart';
+import 'package:car_store_app/product/widgets/custom_button.dart';
 import 'package:car_store_app/product/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
@@ -14,85 +18,121 @@ class LoginView extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: context.paddingNormal,
-          child: Column(
+          child: const Column(
             children: [
-              SizedBox(height: context.dynamicHeight(0.05)),
-              CircleAvatar(
-                backgroundColor: AppColors.orange,
-                radius: 45,
-                child: Text(
-                  'C',
-                  style: context.textTheme.headlineLarge?.copyWith(
-                    color: AppColors.background,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+              Expanded(
+                flex: 4,
+                child: HeaderLogoText(),
               ),
-              SizedBox(height: context.dynamicHeight(0.07)),
-              Text(
-                'Login',
-                style: context.textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+              Expanded(
+                flex: 2,
+                child: TextfieldArea(),
               ),
-              SizedBox(height: context.dynamicHeight(0.02)),
-              Text(
-                'Welcome to CarStore',
-                style: context.textTheme.bodyLarge,
+              Expanded(
+                flex: 4,
+                child: ButtonAndSignup(),
               ),
-              SizedBox(height: context.dynamicHeight(0.05)),
-              CustomTextField(hintText: 'Username', icon: Icons.person_outline),
-              SizedBox(height: context.dynamicHeight(0.02)),
-              CustomTextField(hintText: 'Password', icon: Icons.lock_outline),
-              SizedBox(height: context.dynamicHeight(0.03)),
-              InkWell(
-                onTap: () {},
-                child: Text(
-                  'Forgot Password?',
-                  style: context.textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              SizedBox(height: context.dynamicHeight(0.03)),
-              Container(
-                height: context.dynamicHeight(0.08),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: AppColors.orange,
-                ),
-                child: Center(
-                  child: Text(
-                    'Login',
-                    style: context.textTheme.bodyLarge?.copyWith(
-                      color: AppColors.background,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: context.dynamicHeight(0.03)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text("Don't have an account? "),
-                  SizedBox(width: context.dynamicHeight(0.01)),
-                  InkWell(
-                    onTap: () {},
-                    child: Text(
-                      'Sign Up',
-                      style: context.textTheme.bodyLarge?.copyWith(
-                        color: AppColors.orange,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              )
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class ButtonAndSignup extends StatelessWidget {
+  const ButtonAndSignup({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: context.dynamicHeight(0.03),
+        ),
+        ClickableText(
+          onTap: () {},
+          text: AppStrings.forgotPassword,
+        ),
+        SizedBox(
+          height: context.dynamicHeight(0.05),
+        ),
+        CustomButton(
+          onTap: () {},
+          btnColor: AppColors.orange,
+          text: AppStrings.login,
+          dynamicHeight: 0.08,
+        ),
+        SizedBox(
+          height: context.dynamicHeight(0.05),
+        ),
+        ClickableTextRow(
+          text: AppStrings.dontHaveAccount,
+          onTap: () {},
+          clickableText: AppStrings.signUp,
+          textClr: AppColors.orange,
+        ),
+      ],
+    );
+  }
+}
+
+class TextfieldArea extends StatelessWidget {
+  const TextfieldArea({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        CustomTextField(hintText: AppStrings.userName, icon: Icons.person_outlined),
+        CustomTextField(hintText: AppStrings.password, icon: Icons.lock_outline),
+      ],
+    );
+  }
+}
+
+class HeaderLogoText extends StatelessWidget {
+  const HeaderLogoText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: context.dynamicHeight(0.1),
+        ),
+        CircleAvatar(
+          backgroundColor: AppColors.orange,
+          radius: 45,
+          child: Text(
+            AppStrings.logo,
+            style: context.textTheme.headlineLarge?.copyWith(
+              color: AppColors.background,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: context.dynamicHeight(0.05),
+        ),
+        Text(
+          AppStrings.login,
+          style: context.textTheme.headlineSmall?.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Text(
+          AppStrings.welcome,
+          style: context.textTheme.bodyLarge,
+        ),
+      ],
     );
   }
 }
