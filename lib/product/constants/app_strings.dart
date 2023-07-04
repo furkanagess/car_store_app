@@ -17,4 +17,11 @@ class AppStrings {
   static const String phone = 'Phone Number';
   static const String password = 'Password';
   static const String findYourDream = 'Find your drean car!';
+
+  // Login
+  static const String login = 'Login';
+  static const String forgotPassword = 'Forgot Password?';
+  static const String dontHaveAccount = 'Dont have an account?';
+  static const String userName = 'Username';
+  static const String welcome = 'Welcome to CarStore';
 }
