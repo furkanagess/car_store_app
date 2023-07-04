@@ -1,3 +1,4 @@
+import 'package:car_store_app/feature/view/auth/login_view.dart';
 import 'package:car_store_app/feature/view/auth/signup_view.dart';
 import 'package:car_store_app/product/constants/app_colors.dart';
 import 'package:car_store_app/product/constants/app_strings.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppStrings.appName,
-      home: const SignupView(),
+      home: const LoginView(),
       theme: ThemeData().copyWith(
         colorScheme: ThemeData().colorScheme.copyWith(
               primary: AppColors.orange,
