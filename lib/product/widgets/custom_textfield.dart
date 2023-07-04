@@ -5,13 +5,13 @@ import 'package:car_store_app/product/extension/context_extension.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  String hintText;
-  IconData icon;
   CustomTextField({
-    super.key,
     required this.hintText,
     required this.icon,
+    super.key,
   });
+  String hintText;
+  IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,9 @@ class CustomTextField extends StatelessWidget {
           border: InputBorder.none,
           prefixIcon: Icon(icon),
           hintText: hintText,
-          hintStyle: context.textTheme.bodyMedium?.copyWith(color: AppColors.textfieldTextColor),
+          hintStyle: context.textTheme.bodyMedium?.copyWith(
+            color: AppColors.textfieldTextColor,
+          ),
         ),
       ),
     );

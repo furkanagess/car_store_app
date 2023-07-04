@@ -21,7 +21,7 @@ class LoginView extends StatelessWidget {
                 backgroundColor: AppColors.orange,
                 radius: 45,
                 child: Text(
-                  "C",
+                  'C',
                   style: context.textTheme.headlineLarge?.copyWith(
                     color: AppColors.background,
                     fontWeight: FontWeight.bold,
@@ -30,25 +30,25 @@ class LoginView extends StatelessWidget {
               ),
               SizedBox(height: context.dynamicHeight(0.07)),
               Text(
-                "Login",
+                'Login',
                 style: context.textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               SizedBox(height: context.dynamicHeight(0.02)),
               Text(
-                "Welcome to CarStore",
+                'Welcome to CarStore',
                 style: context.textTheme.bodyLarge,
               ),
               SizedBox(height: context.dynamicHeight(0.05)),
-              CustomTextField(hintText: "Username", icon: Icons.person_outline),
+              CustomTextField(hintText: 'Username', icon: Icons.person_outline),
               SizedBox(height: context.dynamicHeight(0.02)),
-              CustomTextField(hintText: "Password", icon: Icons.lock_outline),
+              CustomTextField(hintText: 'Password', icon: Icons.lock_outline),
               SizedBox(height: context.dynamicHeight(0.03)),
               InkWell(
                 onTap: () {},
                 child: Text(
-                  "Forgot Password?",
+                  'Forgot Password?',
                   style: context.textTheme.bodyMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -63,7 +63,7 @@ class LoginView extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "Login",
+                    'Login',
                     style: context.textTheme.bodyLarge?.copyWith(
                       color: AppColors.background,
                       fontWeight: FontWeight.bold,
@@ -80,7 +80,7 @@ class LoginView extends StatelessWidget {
                   InkWell(
                     onTap: () {},
                     child: Text(
-                      "Sign Up",
+                      'Sign Up',
                       style: context.textTheme.bodyLarge?.copyWith(
                         color: AppColors.orange,
                         fontWeight: FontWeight.bold,
