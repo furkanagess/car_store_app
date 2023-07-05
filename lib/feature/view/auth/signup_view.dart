@@ -1,5 +1,6 @@
 import 'package:car_store_app/product/constants/app_colors.dart';
 import 'package:car_store_app/product/constants/app_strings.dart';
+import 'package:car_store_app/product/constants/navigation_constants.dart';
 import 'package:car_store_app/product/extension/context_extension.dart';
 import 'package:car_store_app/product/widgets/click_rich_text.dart';
 import 'package:car_store_app/product/widgets/custom_button.dart';
@@ -78,7 +79,9 @@ class SocialMediaAndSignin extends StatelessWidget {
           height: context.dynamicHeight(0.01),
         ),
         ClickableTextRow(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, NavigationConstants.LOGIN);
+          },
           text: AppStrings.alreadyHaveAccount,
           clickableText: AppStrings.signIn,
           textClr: AppColors.orange,

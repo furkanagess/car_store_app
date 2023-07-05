@@ -1,5 +1,6 @@
 import 'package:car_store_app/product/constants/app_colors.dart';
 import 'package:car_store_app/product/constants/app_strings.dart';
+import 'package:car_store_app/product/constants/navigation_constants.dart';
 import 'package:car_store_app/product/extension/context_extension.dart';
 import 'package:car_store_app/product/widgets/click_rich_text.dart';
 import 'package:car_store_app/product/widgets/clickable_text.dart';
@@ -70,7 +71,9 @@ class ButtonAndSignup extends StatelessWidget {
         ),
         ClickableTextRow(
           text: AppStrings.dontHaveAccount,
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, NavigationConstants.SIGNUP);
+          },
           clickableText: AppStrings.signUp,
           textClr: AppColors.orange,
         ),
