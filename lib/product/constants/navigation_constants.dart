@@ -3,4 +3,5 @@
 class NavigationConstants {
   static const LOGIN = '/login';
   static const SIGNUP = '/signUp';
+  static const HOME = '/home';
 }
