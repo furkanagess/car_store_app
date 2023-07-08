@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dot_navigation_bar:
 
 
 dev_dependencies:

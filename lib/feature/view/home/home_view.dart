@@ -1,6 +1,7 @@
 import 'package:car_store_app/product/constants/app_colors.dart';
 import 'package:car_store_app/product/extension/context_extension.dart';
 import 'package:car_store_app/product/widgets/stadium_search_bar.dart';
+import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -9,7 +10,27 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       backgroundColor: AppColors.background,
+      bottomNavigationBar: Padding(
+        padding: context.paddingLowVertical,
+        child: DotNavigationBar(
+          unselectedItemColor: Colors.grey,
+          selectedItemColor: AppColors.orange,
+          onTap: (p0) {},
+          items: [
+            DotNavigationBarItem(
+              icon: Icon(Icons.home),
+            ),
+            DotNavigationBarItem(
+              icon: Icon(Icons.favorite),
+            ),
+            DotNavigationBarItem(
+              icon: Icon(Icons.person),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: AppColors.background,
         elevation: 0,
@@ -39,7 +60,7 @@ class HomeView extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: context.paddingNormal,
+        padding: context.paddingNormalHorizontal,
         child: ListView(
           children: [
             Row(
