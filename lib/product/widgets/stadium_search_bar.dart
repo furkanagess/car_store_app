@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:car_store_app/product/extension/context_extension.dart';
 import 'package:flutter/material.dart';
 
 class StadiumSearchBar extends StatelessWidget {
@@ -21,36 +22,39 @@ class StadiumSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      style: TextStyle(
-        color: hintColor,
-      ),
-      cursorColor: hintColor,
-      controller: controller,
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: defaultColor,
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(30),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
-        hintText: hintText,
-        hintStyle: TextStyle(
+    return SizedBox(
+      height: context.dynamicHeight(0.075),
+      child: TextField(
+        style: TextStyle(
           color: hintColor,
         ),
-        prefixIcon: IconButton(
-          icon: Icon(
-            Icons.search,
-            color: hintColor,
-            size: 30,
+        cursorColor: hintColor,
+        controller: controller,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: defaultColor,
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(30),
           ),
-          onPressed: iconTap,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          hintText: hintText,
+          hintStyle: TextStyle(
+            color: hintColor,
+          ),
+          prefixIcon: IconButton(
+            icon: Icon(
+              Icons.search,
+              color: hintColor,
+              size: 30,
+            ),
+            onPressed: iconTap,
+          ),
         ),
+        onSubmitted: (_) => onSubmit,
       ),
-      onSubmitted: (_) => onSubmit,
     );
   }
 }

@@ -61,7 +61,9 @@ class ButtonAndSignup extends StatelessWidget {
           height: context.dynamicHeight(0.05),
         ),
         CustomButton(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, NavigationConstants.HOME);
+          },
           btnColor: AppColors.orange,
           text: AppStrings.login,
           dynamicHeight: 0.08,
