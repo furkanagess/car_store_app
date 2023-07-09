@@ -18,7 +18,7 @@ class LoginView extends StatelessWidget {
       backgroundColor: AppColors.background,
       body: Center(
         child: Padding(
-          padding: context.paddingNormal,
+          padding: context.paddingNormalHorizontal,
           child: const Column(
             children: [
               Expanded(

@@ -18,7 +18,7 @@ class SignupView extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: Center(
         child: Padding(
-          padding: context.paddingNormal,
+          padding: context.paddingNormalHorizontal,
           child: const Column(
             children: [
               Expanded(
