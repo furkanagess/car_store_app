@@ -1,9 +1,9 @@
 import 'package:car_store_app/feature/view/auth/login_view.dart';
 import 'package:car_store_app/feature/view/auth/signup_view.dart';
 import 'package:car_store_app/feature/view/home/home_view.dart';
-import 'package:car_store_app/product/constants/app_colors.dart';
 import 'package:car_store_app/product/constants/app_strings.dart';
 import 'package:car_store_app/product/constants/navigation_constants.dart';
+import 'package:car_store_app/product/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -22,11 +22,7 @@ class MyApp extends StatelessWidget {
         NavigationConstants.HOME: (context) => const HomeView(),
       },
       home: const LoginView(),
-      theme: ThemeData().copyWith(
-        colorScheme: ThemeData().colorScheme.copyWith(
-              primary: AppColors.orange,
-            ),
-      ),
+      theme: AppTheme().theme,
     );
   }
 }
